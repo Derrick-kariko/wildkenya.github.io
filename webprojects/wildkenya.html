@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src = "https://kit.Fontawesome.com/dfa44d76ea.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+ 
+	<title>Wild Kenya</title>
+
+	<style type="text/css">
+		
+		body{
+			box-sizing: border-box;
+			margin: 0px;
+			max-width: 1300px;
+			padding: 0px;
+			margin: auto;
+		}
+
+		.UserCapture{
+			width: 100%;
+			height: 100%;
+			background-image: url("C:/Users/user/OneDrive/Pictures/Wildlife/Sunset.jpg");
+			background-attachment: fixed;
+			background-position: center;
+			background-size: cover;
+			margin: 0px;
+			padding: 0px;
+			opacity: 0.97;
+		}
+		.UserCapture::before{
+			position: absolute;
+            content: "";
+            inset :0;
+            clip-path: polygon(
+            	0% 0%,100% 0%,50% 100%
+            );
+            background-image: url("C:/Users/user/OneDrive/Pictures/Wildlife/Girraffe.jpg");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            max-width: 1300px ;
+            margin: auto;
+		}
+
+		.navbar{
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			margin: 0px;
+			background-color: #2f2f2f;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			font-size: 20px;
+		}
+
+		#icon{
+			display: none;
+			outline: none;
+			border: none;
+			background-color: inherit;
+			color: #ffcb74;
+		}
+
+		.links{
+			display: flex;
+			justify-content: center;
+			z-index: 1;
+		}
+
+		.links a{
+			padding: 12px;
+			font-size: 20px;
+			color: #ffcb74;
+			text-decoration: none;
+			opacity: 0.8;
+		}
+
+		.links a:hover{
+			text-decoration: underline;
+			opacity: 1;
+		}
+
+		.kenya{
+			font-size: 70px;
+			font-family: Times New Roman;	
+			text-align: center;
+		}
+
+		.k{
+			color: black;
+			
+		}
+		.e{
+			color: white;
+		}
+		.n{
+			color:red;
+		}
+		.y{
+			color: white;
+		}
+
+		.a{
+			color: green;
+		}
+
+		
+
+		.content-Data{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-flow: column;
+			background-color: #3b3b3b;
+			opacity: 0.7;
+		}
+
+		.home,.Wildlife,.Culture,.Dailypost{
+			width: 90%;
+			border: 1px solid white;
+			overflow: hidden;
+			border-radius: 12px;
+			font-size: px;
+			padding: 12px;
+			font-family: verdana;
+			/*font-size: 18px;*/
+			margin-bottom: 10px;
+			color: #ffcb74;
+		}
+
+		h4{
+			text-align: center;
+			margin: 0px;
+			padding: 0pc;
+			text-decoration: underline;
+		}
+
+		table{
+			width: 100%;
+			display: block;
+		}
+
+
+		.modal{
+			width: 70%;
+			margin:0px;
+			margin: auto;
+			display: none;
+			position: absolute;
+			top: 14%;
+			height: auto;
+			max-height: 85vh;
+			border-radius: 12px;
+			background-color: #2f2f2f;
+			animation: scale;
+			animation-duration: 1s;
+			animation-iteration-count: 1;
+			animation-timing-function: ease;
+			transition: 1.5s;
+		}
+
+
+		@keyframes scale{
+			from{
+				transform: scale(0) translateY(-1000px);
+				opacity: 0;
+				
+			}to{
+				transform: scale(1.0);
+				
+			}
+		}
+
+		.modal .top{
+			padding: 15px;
+			display: flex;
+			position: fied;
+			top: 0px;
+
+		}
+
+		.top button{
+		    position: absolute;	
+		    right: 10px;
+		    font-size: 22px;
+		    font-weight: bold;
+		    border:none;
+		    outline:none;
+		    background-color: inherit;
+		    color: white;
+
+		}
+
+		.top button:hover,
+		.top button:focus{
+			color: red;
+		}
+
+		.modal h4{
+			color: #ffcb74;
+			font-size: 20px;
+			text-decoration: none;
+			font-weight: none;
+		}
+
+
+		.image-container{
+			width: 100%;
+			height: 40%;
+		}
+
+		.image-container > div{
+			aspect-ratio: 3/1.5;
+		}
+
+		img{
+			object-fit: cover;
+			object-position: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.daily-content{
+			color: #ffcb74;
+		}
+
+		.footer{
+			border: 2px solid whitesmoke;
+			background-color: white;
+			padding: 12px;
+		}
+		i{
+			padding-left: 12px;
+		}
+
+		
+
+	 
+
+		
+
+		/*MEDIA QUERIES*/
+
+		/*NAVIGATION BAR*/
+		@media screen and (max-width: 360px){
+			.kenya{
+				font-size: 45px;
+			}
+			.navbar{
+				flex-direction: column;
+			}
+
+			.links{
+				flex-direction: column;
+				overflow: hidden;
+				height: 0px;
+			}
+
+			#icon{
+				display: block;
+				text-align: left;
+				width: 100%;
+
+			}
+
+		}
+
+		@media screen and (max-width: 500px){
+			.home,.Wildlife,.Culture,.Dailypost{
+				width: 100%;
+				margin: 0px;
+				font-size: 18px;
+			}
+		}
+
+		@media screen and (min-width: 600px){
+			.image-container > div{
+			    aspect-ratio:6/2;
+		    }
+
+		    
+		}
+
+		@media screen and (max-width: 600px){
+			.modal{
+				width:100%;
+			}
+
+		    
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="content-body" id="body">
+	    <div class="UserCapture">
+		    <div class="navbar">
+		        <button onclick="openNav()" id="icon" class="icon">&#9776; MENU</button>
+		        <div class="links" id="link">
+    		        <a href="#home">Home</a>
+    		        <a href="#WildLife">WildLife</a>
+    		        <a href="#culture">Culture</a>
+    		        <a href="#dailyPost" id="openmodal">Dailypost</a>
+    	        </div>
+    	    </div>
+	        <div class="kenya">
+		        <span class="k">K</span>
+		        <span class="e">E</span>
+		        <span class="n">N</span>
+		        <span class="y">Y</span>
+		        <span class="a">A</span>
+	        </div>
+
+	        <div class="content-Data">
+	    	    <div class="home" id="home">
+	    		KENYA  is well renowned for its adventorous and exciting safaris by many.<br>
+	    		The country  has a dense population of wildlife and large landmass of Beautiful nature to explore.<br>
+	    		Apart from the famous Migration of wildbeast as known by many In the Maasai Mara,the are other wild animals to see like:
+	    		<ul>
+	    			<li>the lions in the Amboseli,</li>
+	    			<li>Elephants,girraffes,Antelopes,Gazelles in the Amboseli National Park</li>
+	    			<li>birds(Over 460 species of birds found here) in Lake Nakuru National Park,</li>
+	    			<li>Crocodiles,Hippos and rare aquatic animals in Lake Naivasha and </li>
+	    			<li>Marine life and Features such as the White Sand beaches,coral reefs,Gede Ruins and much more along the shore of the  Indian ocean just to mention a few.</li>
+	    		</ul>
+	    	    </div>
+	    	    <div class="Wildlife" id="Wildlife">
+	    		<h4 id="WildLife">Kenya's WildLife</h4>
+	    		The wildlife ecosystem in kenya is mainly divided into:national parks(marine and terrestrial,gane reserves(marine and terrestrial),sanctuaries.Kenya has a total of 23 terrestrial national parks,28 terrestrial game reserves,4 marine national parks, 6 marine national reserves and 4 national sanctueries.They are located in different ecosystem such as:forest,savannah,wetlands,marine,arid and semi-arid.
+
+			    AS for the marine life come and get to enjoy the extensive  marine life and features.Some of the key features include:shimoni caves,Watamu, Geda ruins, fort jesus,Diani beach and much more.
+			    Here is a table of some ,National parks,Game reserves,Marine National parks and Santuaries
+
+			    <table class="table table-borderless table-hover table-responsive-sm">
+			    	<tr>
+			    		<th>National Parks</th>
+			    		<th>Game Reserves</th>
+			    		<th>Marine National parks</th>
+			    		<th>Santuaries</th>
+			    	</tr>
+
+			    	<tr>
+			    		<td>Mt.Kenya National Park</td>
+			    		<td>Mwingi Game reserve</td>
+			    		<td>Kiunga Marine</td>
+			    		<td>Kisumy Impala santuary</td>
+			    	</tr>
+			    	<tr>
+			    		<td>Nairobi National Park</td>
+			    		<td>Nasalot Game reserve</td>
+			    		<td>Watamu Marine Park</td>
+			    		<td>Lake Simbi</td>
+			    	</tr>
+			    	<tr>
+			    		<td>Amboseli National Park</td>
+			    		<td>Kakamega forest Game reserve</td>
+			    		<td>Mombasa National park</td>
+			    		<td>Lake Elementaita</td>
+			    	</tr>
+			    	<tr>
+			    		<td>Aberdare National Park</td>
+			    		<td>Mwea Game reserve</td>
+			    		<td>Malindi Marine Park</td>
+			    		<td></td>
+			    	</tr>
+			    	<tr>
+			    		<td>Mt.Elgon National Park</td>
+			    		<td>Bisanadi Game reserve</td>
+			    		<td>Kiste Mpunguti marine park</td>
+			    		<td></td>
+			    	</tr>
+			    	<tr>
+			    		<td>Malka Mari National Park</td>
+			    		<td>Shimba Hills Game reserve</td>
+			    		<td></td>
+			    		<td></td>
+			    	</tr>
+			    	<tr>
+			    		<td>Meru National Park</td>
+			    		<td></td>
+			    		<td></td>
+			    		<td></td>
+			    	</tr>
+			    	<tr>
+			    		<td>Tsavo East National Park</td>
+			    		<td></td>
+			    		<td></td>
+			    		<td></td>
+			    	</tr>
+			    	<tr>
+			    		<td>Tsave West National Park</td>
+			    		<td></td>
+			    		<td></td>
+			    		<td></td>
+			    	</tr>	
+			    </table>
+			    </div>
+
+			    <div class="Culture">
+				<h4 id="culture">Culture & Traditions</h4>
+				Kenya happens to be blessed with communities with very interesting,enjoyable cultures.
+				Alongside the various destinations in kenya Comes along the people,community and their culture.Many of the culture are still intact so you are sure to find and engage in various activities with the community.
+				Most known and famous community is that of the Maasai.
+				When you get to visit the Maasai Mara you'll get to find them.
+				They are a very hospitable to everyone in general.You'll get to engage with theme in song and dance,trying out there iconic traditional attires,traditional food and drinks and so much more.
+
+				<!--RESEARCH ON COAST & TANZANIA FOOD AND DISHES -- YOUTUBE-->
+				Along the coast we have various communities that sorround the marine parks and santuaries.There you can get to enjoy the beautiful Swahili language,Engage in song and and dance like the ,Taarab'.You also get to enjoy local Food whicn is amazing(pilau,Matoke,Samosa,Wali wa Nazi,Coconut Milk,Mabuyu,Kuku wa nazi,Viazi Karai and many more)
+			    </div>
+	        </div>
+	    </div>
+	</div>
+
+
+	<div class="modal" id="modal">
+		<div class="top">
+	        <h4>Today's Post :LEOPARDS</h4>
+	        <button onclick="closeModal()">&times;</button>
+	    </div>
+	    <div class="image-container">
+	        <div class="image">
+	        	<img src="C:\Users\user\OneDrive\Pictures\Wildlife\Leopard.jpg">
+	        </div>	 
+	    </div>
+
+	    <div class="daily-content">
+	    	Leopards are considered one of the most dangerous animals in kenya.Classified in the BIG FIVE,these animals are cherished and protected in the wildlands.<br>
+
+	    	Leopards are considered dangerous due to:
+	    	<ul>
+	    		<li>
+	    			Ability to blend in the sorrounding and approach prey unnoticed,</li>
+	    		<li>
+	    		    Speed : can reach a top speed of 60km/hr,
+	    		</li>
+	    	    <li>
+	    			Mascular & powerful muscles  in nature making them suitable to prey on bigger animals(can carry a young giraffe,125kg up 5.7m tree)
+	    		</li>
+	    	</ul>
+
+	    	Back in 2018,there rare black leopard(Black Panther),Was discoverd in Kenya Laikipia county for the first time in 100yrs.<br>
+	    	Since Then there has been 5 Confirmed black leopards in roaming in Laikipia.
+	    	The sighting of black Leopards Is very rare as the first one took upto 6months to get clear view of this rare animal after it was confirmed to be present in kenya.
+
+	    	<h4>WHERE TO SEE LEOPARDS IN KENYA</h4>
+	    	<ul>
+	    		<li>Samburu National Reserve</li>
+	    		<li>Maasai mara</li>
+	    		<li>Tsavo national Park</li>
+	    		<li>Olpejeta coservancy</li>
+	    		<li>Laikipia wilderness camp</li>
+	    		<li>Amboseli National Park</li>
+	    		<li>Lewa WildLife Conservancy</li>
+	    		<li>Kora National park</li>
+	    	</ul>
+	    </div>
+	</div>	
+</body>
+
+<script type="text/javascript">
+	function openNav(){
+		let links = document.getElementById("link");
+		if(links.style.height === "0px"){
+			links.style.height = "auto";
+		}else{
+			links.style.height = "0px";
+		}
+	}
+
+	window.onclick = function(event){
+	if(!event.target.matches('.icon')) {
+
+		let links = document.getElementById("link");
+
+		if(links.style.height === "auto"){
+			links.style.height = "0px";
+		}
+	}
+}
+
+//modal functions
+
+
+var modal = document.getElementById('modal');
+var body  = document.getElementById("body");
+var button = document.getElementById("openmodal");
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    /*if (event.target !== modal) {
+        modal.style.display = "none";
+        body.style.opacity = "1";
+    }*/
+    //OPEN MODAL
+    if (event.target == button) {
+    	modal.style.display = "block";
+    	body.style.opacity = "0.3";
+    }
+}
+//CLOSE MODAL
+function closeModal(){
+    let modal =  document.getElementById('modal');
+    let body  = document.getElementById("body")
+    modal.style.display = "none";
+    body.style.opacity = "1";
+}
+
+
+
+
+</script>
+</html>
